@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Fintech/Corporate palette from design spec */
+    /* #F3F5F7 background */
+    --background: 0.963 0.005 240;
+    /* #FFFFFF card */
+    --card: 1 0 0;
+    --card-foreground: 0.2 0.025 265;
+    /* #111827 foreground */
+    --foreground: 0.2 0.025 265;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0.025 265;
+
+    /* #2563EB primary blue */
+    --primary: 0.545 0.19 260;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.94 0.008 240;
+    --secondary-foreground: 0.2 0.025 265;
+
+    --muted: 0.94 0.008 240;
+    /* #6B7280 muted text */
+    --muted-foreground: 0.52 0.02 265;
+
+    --accent: 0.93 0.04 250;
+    --accent-foreground: 0.545 0.19 260;
+
+    --destructive: 0.51 0.2 25;
+    --destructive-foreground: 1 0 0;
+
+    /* #16A34A success green */
+    --success: 0.55 0.16 145;
+    --success-foreground: 1 0 0;
+
+    /* #E5E7EB border */
+    --border: 0.906 0.006 240;
+    --input: 0.906 0.006 240;
+    --ring: 0.545 0.19 260;
+
+    --chart-1: 0.545 0.19 260;
+    --chart-2: 0.55 0.16 145;
+    --chart-3: 0.51 0.2 25;
+    --chart-4: 0.72 0.14 80;
+    --chart-5: 0.62 0.12 55;
+    --chart-6: 0.58 0.16 300;
+
+    /* Sidebar */
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.2 0.025 265;
+    --sidebar-primary: 0.545 0.19 260;
+    --sidebar-primary-foreground: 1 0 0;
+    /* #DBEAFE selected bg */
+    --sidebar-accent: 0.93 0.04 250;
+    --sidebar-accent-foreground: 0.545 0.19 260;
+    --sidebar-border: 0.906 0.006 240;
+    --sidebar-ring: 0.545 0.19 260;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-success {
+    color: oklch(var(--success));
+  }
+  .bg-success {
+    background-color: oklch(var(--success));
+  }
+  .text-income {
+    color: oklch(0.55 0.16 145);
+  }
+  .text-expense {
+    color: oklch(0.51 0.2 25);
+  }
+  .amount-positive {
+    color: #16a34a;
+    font-weight: 600;
+  }
+  .amount-negative {
+    color: #dc2626;
+    font-weight: 600;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(var(--border)) transparent;
+  }
+}
